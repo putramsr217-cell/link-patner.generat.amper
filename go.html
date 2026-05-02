@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const link = params.get("to");
+
+    if (link) {
+      window.location.href = link;
+    }
+  </script>
+</head>
+<body style="text-align:center; margin-top:50px; font-family:Arial;">
+  <p>Redirecting...</p>
+</body>
+</html>

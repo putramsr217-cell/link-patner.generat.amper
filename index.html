@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Link Generator</title>
+  <meta charset="UTF-8">
+</head>
+<body style="font-family: Arial; text-align:center; margin-top:50px;">
+
+  <h2>Generate Link</h2>
+
+  <!-- ini pengganti og:title -->
+  <input type="text" id="target" placeholder="Masukkan link tujuan"
+    style="width:300px; padding:10px;"><br><br>
+
+  <button onclick="generate()" style="padding:10px 20px;">Generate</button>
+
+  <p id="hasil" style="margin-top:20px; font-weight:bold;"></p>
+
+  <script>
+    function generate() {
+      let target = encodeURIComponent(document.getElementById("target").value);
+
+      if (!target) {
+        alert("Masukkan link dulu!");
+        return;
+      }
+
+      let url = window.location.origin + "/go.html?to=" + target;
+      document.getElementById("hasil").innerText = url;
+    }
+  </script>
+
+</body>
+</html>
